@@ -6,7 +6,8 @@ $(document).ready(function() {
     const controls = $(".controls-container");
     const dragContainer = $(".draggable-objects");
     const dropContainer = $(".drop-points");
-    const timer = $("#timer"); // Select the timer div
+    const timer = $("#timer");
+    const scoreDisplay = $("#score");
     const data = [
         "one", "two", "three", "four", "five",
         "six", "seven", "eight", "nine",
@@ -15,8 +16,22 @@ $(document).ready(function() {
     let count = 0;
     let timeLeft = 30;
     let timerInterval;
+    let userScore = 0;
 
-    // Timer function
+    const fetchUserScore = () => {
+        $.ajax({
+            url: 'get_score.php',
+            method: 'GET',
+            success: function(response) {
+                userScore = parseInt(response);
+                scoreDisplay.text(userScore);
+            },
+            error: function(xhr, status, error) {
+                console.error('Error fetching user score:', error);
+            }
+        });
+    };
+
     const startTimer = () => {
         timerInterval = setInterval(() => {
             timeLeft -= 1;
@@ -29,20 +44,18 @@ $(document).ready(function() {
                 startButton.text("Retry");
                 startButton.removeClass("hide");
                 startButton.off("click").on("click", function() {
-                    location.reload(); // Reload the page to retry
+                    location.reload();
                 });
             }
         }, 1000);
     };
 
-    // Reset timer function
     const resetTimer = () => {
         clearInterval(timerInterval);
         timeLeft = 30;
         timer.text(`Time Left: ${timeLeft}s`);
     };
 
-    // This are the drag and drop functions
     const drop = (event, ui) => {
         const draggedElementData = ui.draggable.attr("id");
         const droppableElementData = $(event.target).attr("data-id");
@@ -56,36 +69,31 @@ $(document).ready(function() {
 
             count += 1;
 
-            // Update score by adding 10 points for each correct answer
-            const currentScore = parseInt($("#score").text());
+            const currentScore = parseInt(scoreDisplay.text());
             const updatedScore = currentScore + 10;
-            $("#score").text(updatedScore);
+            scoreDisplay.text(updatedScore);
 
-            // Send AJAX request to update score in XML file
             $.ajax({
                 url: 'update_score.php',
                 method: 'POST',
                 data: { score: updatedScore },
                 success: function(response) {
-                    // Handle success response if needed
                     console.log('Score updated successfully.');
                 },
                 error: function(xhr, status, error) {
-                    // Handle error if needed
                     console.error('Error updating score:', error);
                 }
             });
         } else {
-            // Add red color if dropped on the wrong container
-            $(event.target).css("background-color", "#ff6961"); // Red color
+            $(event.target).css("background-color", "#ff6961");
             setTimeout(() => {
-                $(event.target).css("background-color", ""); // Reset color after 1 second
+                $(event.target).css("background-color", "");
             }, 1000);
         }
 
         if (count === 5) {
             result.text("Great!");
-            clearInterval(timerInterval); // Stop the timer
+            clearInterval(timerInterval);
             controls.removeClass("hide");
             startButton.text("Level 2");
             startButton.removeClass("hide");
@@ -127,8 +135,8 @@ $(document).ready(function() {
             dropContainer.append(countryDiv);
         }
 
-        draggableObjects = $(".draggable-image"); // Update draggable objects
-        dropPoints = $(".num"); // Update drop points
+        draggableObjects = $(".draggable-image");
+        dropPoints = $(".num");
     };
 
     const randomValueGenerator = () => {
@@ -137,9 +145,10 @@ $(document).ready(function() {
 
     startButton.on("click", function() {
         controls.addClass("hide");
-        resetTimer(); // Reset the timer before starting
-        startTimer(); // Start the timer
-        creator(); // Moved this here to ensure draggable objects and drop points are created after starting the timer
+        resetTimer();
+        startTimer();
+        fetchUserScore();
+        creator();
         count = 0;
 
         draggableObjects.draggable({

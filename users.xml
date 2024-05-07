@@ -1,4 +1,4 @@
 <?xml version="1.0"?>
 <users>
     <!-- User data goes here -->
-<user><email>kat.com</email><username>kat</username><password>1234</password><gamesPlayed>0</gamesPlayed><score>50</score></user></users>
+<user><email>kat.com</email><username>kat</username><password>1234</password><gamesPlayed>10</gamesPlayed><score>50</score></user><user><email>johnas.com</email><username>nasu</username><password>johnas</password><gamesPlayed>7</gamesPlayed><score>50</score></user><user><email>nic</email><username>nic</username><password>nic</password><gamesPlayed>1</gamesPlayed><score>190</score></user></users>

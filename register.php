@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $xml->asXML('users.xml');
 
     // Redirect to a success page or do any other necessary actions
-    header("Location: home.php");
+    header("Location: index.php");
     exit;
 }
 ?>
@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <input type="submit" class="btn" name="submit" value="Sign Up">
                 </div>
                 <div class="links">
-                    Already have an account? <a href="login.php">Login</a>
+                    Already have an account? <a href="index.php">Login</a>
                 </div>
                 
             </form>

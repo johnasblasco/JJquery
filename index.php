@@ -7,20 +7,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // You should validate the username and password against your records (e.g., from users.xml)
-    // For simplicity, let's assume you have a users.xml file with the same structure as in the registration part
-
     // Load the XML file
     $xml = simplexml_load_file('users.xml');
-    
+
     // Search for the user with the provided username and password
     $user = $xml->xpath("//user[username='$username' and password='$password']");
-    
+
     if ($user) {
-        // User found, set session variables and redirect to home page or dashboard
+        // User found, set session variables
         $_SESSION['username'] = (string)$user[0]->username;
         $_SESSION['email'] = (string)$user[0]->email;
-        
+
         // Redirect to home page or dashboard
         header("Location: home.php");
         exit;
@@ -30,7 +27,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
