@@ -1,0 +1,57 @@
+.home-screen {
+    text-align: center;
+    padding: 150px; /* Increased padding to move content further down */
+}
+.navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 120px; /* Increase the margin-top value to move the navigation buttons further below */
+    margin-bottom: 20px;
+}
+
+
+.navigation a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #948979; 
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
+    transition: background-color 0.3s;
+}
+
+.navigation a:hover {
+    background-color: #948979; 
+}
+
+.play-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px; /* Add margin to separate from the navigation */
+    margin-bottom: 20px; /* Adjust margin below the navigation */
+    padding: 70px;
+}
+
+.play-container a {
+    font-size: 1.5em;
+    padding: 1em 2em;
+    display: inline-block;
+    text-decoration: none;
+    background-color: #3C5B6F;
+    border: none;
+    color: white;
+    padding: 20px 40px; 
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.play-container a:hover {
+    background-color: #948979;
+}
+
+

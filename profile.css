@@ -1,0 +1,83 @@
+body{
+    background: #153448;
+    font-family: 'Roboto', sans-serif;
+    margin: 120px;
+    padding: 0;
+}
+
+header {
+    background-color: #DFD0B8;
+    color: black;
+    max-width: 700px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    
+}
+
+h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.profile-info {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#user-info,
+#user-stats,
+#game-progress {
+    margin-bottom: 20px;
+}
+
+#edit-form {
+    margin-bottom: 20px;
+}
+
+.hide {
+    display: none;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #555;
+}
+.bck-container{
+    padding: 10px; 
+    margin-bottom: 20px; 
+    border-radius: 10px; 
+    text-align: center;
+   
+}
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 5px 10px;
+    background-color: #DFD0B8;
+    color: rgb(0, 0, 0);
+    border-radius: 5px; 
+    text-decoration: none;
+    font-weight: bold;
+  
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}

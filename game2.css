@@ -1,0 +1,113 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  body{
+    background: #153448;
+    font-family: 'Roboto', sans-serif;
+}
+/*white box style*/
+  .container {
+    width: 90%;
+    max-width: 60em;
+    background-color: #ffffff;
+    padding: 3em 2em;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 0.8em;
+  }
+
+  .bck-container{
+    padding: 10px; 
+    margin-bottom: 20px; 
+    border-radius: 10px; 
+    text-align: center;
+}
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 5px 10px;
+    background-color: #DFD0B8;
+    color: rgb(0, 0, 0);
+    border-radius: 5px; 
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+/*text*/
+  h3 {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto 2em auto;
+    font-size: 1.5em;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    line-height: 1.8em;
+    color: #010c39;
+  }
+  .draggable-objects,
+  .drop-points {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 1em;
+  }
+  .draggable-image {
+    width: 6em;
+    margin-bottom: 1em;
+    cursor: move;
+  }
+  img {
+    width: 5em;
+    filter: drop-shadow(0 0.3em 0.9em rgba(0, 0, 0, 0.25));
+  }
+  .fruits {
+    width: 7em;
+    height: 7em;
+    display: grid;
+    place-items: center;
+    border: 0.15em solid #010c39;
+    border-radius: 0.5em;
+    margin-bottom: 1em;
+  }
+  .dropped {
+    padding: 0;
+    background-color: #e5ffc8;
+  }
+  .controls-container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: #4F6F52;
+    flex-direction: column;
+    top: 0;
+  }
+  .controls-container button {
+    font-size: 1.5em;
+    padding: 1em 2em;
+    border-radius: 0.2em;
+    border: none;
+    outline: none;
+    color: #010c39;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+  }
+  .controls-container p {
+    color: #ffffff;
+    font-size: 2em;
+    margin-bottom: 1em;
+  }
+  .hide {
+    display: none;
+  }

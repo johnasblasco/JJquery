@@ -1,0 +1,79 @@
+body{
+        background: #153448;
+        font-family: 'Roboto', sans-serif;
+        margin: 120px;
+        padding: 0;
+}
+.container {
+    max-width: 700px;
+    margin: 120px auto 50px; /* Adjust margin for centering vertically */
+    padding: 20px;
+    background-color: #DFD0B8; /* Change background color */
+    color: white; /* Change text color */
+    border-radius: 10px; /* Add border-radius for rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add box shadow for depth */
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1{
+    color: black;
+    font-size: 2em;
+}
+section {
+    margin-bottom: 40px;
+}
+
+.caption {
+    margin-bottom: 20px;
+    text-align: justify;
+    color: black;
+}
+
+.dashed-container {
+    border: 3px dashed black;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 5px 10px;
+    background-color: #DFD0B8;
+    color: rgb(0, 0, 0);
+    border-radius: 5px; 
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.dev-section {
+    display: flex;
+    flex-direction: column; /* Stack image and caption vertically */
+    align-items: center; /* Center horizontally */
+}
+
+.developer-image {
+    margin-right: 20px; /* Add some spacing between the image and the caption */
+}
+
+.developer-image img {
+    width: 250px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5%;
+}
+
+.developer-caption {
+    text-align: center;
+    color: black;
+    font-weight: bold;
+}
